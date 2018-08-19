@@ -1,0 +1,25 @@
+<div class="row">
+  <div id="newsfeed" class="col-lg-6">
+    <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
+    <div id="activities">
+      <% if @activities.empty? %>
+        <div class="well">
+          <%= render('shared/no_resource', resources: 'Activities') %>
+        </div>
+      <% else %>
+        <%= render_activities(@activities, layout: '/shared/activity') %>
+      <% end %>
+    </div>
+    <%= render 'shared/paginate', resources: @activities %>
+  </div>
+  <div id="intro" class="col-lg-6">
+    <h1>Talented</h1>
+    <hr>
+    <a href="http://status.mytalented.com/" class="btn btn-warning">
+      <%= fa_icon 'star' %> App Status
+    </a>
+    <a href="http://support.mytalented.com/" class="btn btn-primary">
+      <%= fa_icon 'code-fork' %> Support Site
+    </a>
+  </div>
+</div>
